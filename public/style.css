@@ -1,0 +1,382 @@
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Logo */
+    .logo img {
+      height: 50px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Navigation Menu */
+    nav .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      opacity: 0;
+      transform: translateY(-20px); /* Start with menu hidden above */
+      max-height: 0; /* Initially, set max-height to 0 to hide the menu */
+      overflow: hidden;
+      transition: opacity 0.3s ease, transform 0.5s ease;
+    }
+
+    nav.active .menu {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 500px; /* Allow space for the menu to expand */
+      transition: max-height 0.5s ease-in-out; /* Smooth transition for height */
+    }
+
+    nav .menu a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px;
+      transition: color 0.3s ease;
+      opacity: 0; /* Hidden initially */
+      animation: fadeIn 0.5s ease forwards; /* Fade-in animation */
+    }
+
+    nav .menu a:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    nav .menu a:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    nav .menu a:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    nav .menu a:nth-child(4) {
+      animation-delay: 0.5s;
+    }
+    nav .menu a:nth-child(5) {
+      animation-delay: 0.6s;
+    }
+
+    nav .menu a:hover {
+      color: #fff;
+      background-color: #007bff;
+      border-radius: 5px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 101;
+    }
+
+    .hamburger div {
+      width: 30px;
+      height: 4px;
+      background-color: #333;
+      margin: 5px 0;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background-color: #fff;
+      margin-top: 70px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .hero h1 span {
+      color: #007bff;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: #666;
+    }
+
+    .hero .buttons a {
+      margin: 0 15px;
+      padding: 12px 30px;
+      font-size: 18px;
+      text-decoration: none;
+      color: white;
+      border-radius: 5px;
+      background-color: #007bff;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero .buttons a:hover {
+      background-color: #0056b3;
+    }
+
+    .hero img {
+      width: 300px;
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+
+      nav .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+
+      nav.active .menu {
+        display: flex;
+      }
+
+      nav .menu a {
+        padding: 12px;
+        text-align: left;
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .hero .buttons a {
+        padding: 10px 20px;
+      }
+
+      .hamburger {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .hero img {
+        width: 250px;
+      }
+    }
+
+    /* Show Menu when Hamburger is Active */
+    nav.active .menu {
+      display: flex;
+      transform: translateY(0); /* Ensure it's visible with smooth effect */
+    }
+
+    nav.active .hamburger div:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    nav.active .hamburger div:nth-child(2) {
+      opacity: 0;
+    }
+
+    nav.active .hamburger div:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    section {
+            padding: 10px 0 10px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        section .judul {
+            background-color: #0077ff;
+            padding: 10px;
+            color: #333;
+        }
+
+        section p {
+            padding: 10px;
+            color: rgb(0, 0, 0);
+        }
+
+        section .project-container {
+            display: flex;
+            gap: 10px; /* Jarak antar item */
+            overflow-x: auto; /* Aktifkan scroll horizontal */
+            padding: 10px; /* Spasi dalam container */
+            scroll-behavior: smooth; /* Scroll yang halus */
+            scrollbar-width: thin; /* Untuk browser yang mendukung */
+            scrollbar-color: #333 #ddd; /* Warna scrollbar */
+        }
+        
+        .project-container::-webkit-scrollbar {
+            height: 8px; /* Tinggi scrollbar */
+        }
+        
+        .project-container::-webkit-scrollbar-thumb {
+            background-color: #333; /* Warna scrollbar */
+            border-radius: 10px; /* Bentuk bulat */
+        }
+        
+        .project-container::-webkit-scrollbar-track {
+            background: #ddd; /* Warna latar scrollbar */
+        }
+        
+        .project {
+            flex: 0 0 auto; /* Tidak mengembang, lebar tetap */
+            width: 250px;
+            height: 340px;
+            border-radius: 10px;
+            border: 2px solid #333;
+            background-color: #fff;
+            display: flex;
+            padding: 5px;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .project img {
+            width: 100%; 
+            height: 200px; 
+            border-radius: 10px 10px 0 0;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+  
+        .project {
+          margin: 0;
+          padding: 0;
+          text-align: center;
+        }
+
+        .project a {
+            width: 90%; 
+            background-color: #00b7ffd5;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid #000000b4;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease; 
+        }
+        
+        .project a:hover {
+            background-color: #0077ff;
+            color: #ffffff; 
+            border: 2px solid #333; 
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Space between buttons */
+            gap: 20px; /* Add space between buttons */
+            padding: 20px; /* Padding around the container */
+          }
+        
+          .apis {
+            text-decoration: none; /* Remove underline from links */
+            width: 45%; /* Set the width of each button */
+          }
+        
+          .btn {
+            width: 100%; /* Ensure the button takes up full width of the anchor */
+            padding: 12px 20px;
+            background-color: #007bff; /* Button background color */
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        
+          .btn i {
+            margin-right: 8px; /* Space between icon and text */
+            font-size: 20px;
+          }
+        
+          .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+          }
+        
+          .btn:active {
+            transform: translateY(0); /* Reset lift on click */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow on click */
+          }
+        
+          /* Responsive for smaller screens */
+          @media (max-width: 768px) {
+            .button-container {
+              flex-direction: column; /* Stack buttons vertically */
+              gap: 15px; /* Adjust spacing for smaller screens */
+            }
+        
+            .apis {
+              width: 100%; /* Full width for smaller screens */
+            }
+          }
